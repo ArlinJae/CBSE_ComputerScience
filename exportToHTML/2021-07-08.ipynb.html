@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>2021-07-08.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+.s4 { color: #cc7832;}
+.ls0 { height: 1px; border-width: 0; color: #4d4d4d; background-color:#4d4d4d}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+2021-07-08.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% md 
+</span>
+<span class="s1">## Classwork : 2021-07-08 
+ <hr class="ls0"></span><span class="s0">#%% md 
+</span>
+<span class="s1">1) Identify the data types of the following data objects: 
+ 
+    - **7** :  int 
+    - **‘7’** : str 
+    - **“7”** : str 
+    - **7.0** : float 
+    - **‘’’7’’’** : str 
+    - **-0.7** : float 
+    - **29** : int 
+    - **-15.38** : float 
+    - **“29 acres”** : str 
+    - **“. &amp; #”** : str 
+ <hr class="ls0"></span><span class="s0">#%% 
+</span>
+<span class="s1">print(type(</span><span class="s2">7</span><span class="s1">))</span>
+<span class="s1">print(type(</span><span class="s3">'7'</span><span class="s1">))</span>
+<span class="s1">print(type(</span><span class="s3">&quot;7&quot;</span><span class="s1">))</span>
+<span class="s1">print(type(</span><span class="s2">7.0</span><span class="s1">))</span>
+<span class="s1">print(type(</span><span class="s3">'''7'''</span><span class="s1">))</span>
+<span class="s1">print(type(-</span><span class="s2">0.7</span><span class="s1">))</span>
+<span class="s1">print(type(</span><span class="s2">29</span><span class="s1">))</span>
+<span class="s1">print(type(</span><span class="s2">15.38</span><span class="s1">))</span>
+<span class="s1">print(type(</span><span class="s3">&quot;29 acres&quot;</span><span class="s1">))</span>
+<span class="s1">print(type(</span><span class="s3">&quot;. &amp; #&quot;</span><span class="s1">))</span>
+<hr class="ls0"><span class="s0">#%% md 
+</span>
+<span class="s1">2) What is a variable? What are the rules for forming valid variable names in Python? 
+ 
+    - A variable is a container which stores data. 
+    - Variables need to follow the following format in python: 
+        \- They must start with an underscore (example - `__main__`) or with a letter. 
+        \- They cannot start with a number. 
+        \- They can only contain alpha-numeric characters and underscores. 
+        \- names are case-sensitive (`name != NAME != Name`) 
+        \- You cannot use reserved keywords. 
+ <hr class="ls0"></span><span class="s0">#%% md 
+</span>
+<span class="s1">3) Write Python statements to display a list of Python keywords. 
+ <hr class="ls0"></span><span class="s0">#%% 
+</span>
+<span class="s0">#You need to execute this cell a single time only</span>
+<span class="s4">import </span><span class="s1">keyword</span>
+<hr class="ls0"><span class="s0">#%% 
+</span>
+<span class="s1">print(keyword.kwlist)</span>
+<hr class="ls0"><span class="s0">#%% md 
+</span>
+<span class="s1">4) What is an augmented assignment operator? Give an example to explain. 
+ 
+    - Augmented assignment operators help in making statements more compact.  
+    - They're usually used to change pre-existing values. 
+ <hr class="ls0"></span><span class="s0">#%% 
+</span>
+<span class="s1">a1 = </span><span class="s2">5</span>
+<span class="s1">b1 = </span><span class="s2">15</span>
+
+<span class="s1">a2 = </span><span class="s2">5</span>
+<span class="s1">b2 = </span><span class="s2">15</span>
+<hr class="ls0"><span class="s0">#%% 
+</span>
+<span class="s1">a1 += b1</span>
+<span class="s1">print(a1)</span>
+
+<span class="s1">a2 = a2 + b2</span>
+<span class="s1">print(a2)</span>
+
+<span class="s0">#Therefore, we can conclude that a += b is the same as a = a + b</span>
+<hr class="ls0"><span class="s0">#%% md 
+</span>
+<span class="s1">5) Identify invalid variable names from the following, give reason for each: 
+ 
+    - **`Group`** :  VALID 
+    - **`if`** : INVALID ; is keyboard 
+    - **`int`** : INVALID ; is keyboard 
+    - **`total marks`** : INVALID ; contains space 
+    - **`S.I.`** : INVALID ; contains a dot 
+    - **`volume`** : VALID 
+    - **`tot_strength`** : VALID 
+    - **`9t`** : VALID 
+    - **`tag$`** : INVALID ; contains a $ 
+ <hr class="ls0"></span><span class="s0">#%% md 
+</span>
+<span class="s1">6) What is a token? What are different categories of tokens in Python? Give two examples of tokens of each category. 
+ 
+    - A token is one of the components of each logical line in python. 
+    - The types of tokens are as follows: 
+        \- identifiers : `name`, `no_of_friends` 
+        \- keywords : `and`, `or` 
+        \- literals : `3.2`, `1.1` 
+        \- operators : `+`, `**` 
+        \- delimiters : `:`, `+=` 
+ <hr class="ls0"></span><span class="s0">#%% md 
+</span>
+<span class="s1">7) Observe the following script and enlist all the tokens used in it. For each token, write its category 
+too: 
+ <hr class="ls0"></span><span class="s0">#%% 
+</span>
+<span class="s0">#Identify tokens in the script</span>
+<span class="s1">name = </span><span class="s3">&quot;Arjun&quot;</span>
+<span class="s1">age = eval(input(</span><span class="s3">&quot;Enter age: &quot;</span><span class="s1">))</span>
+<span class="s1">print(name</span><span class="s4">, </span><span class="s3">&quot;is&quot;</span><span class="s4">, </span><span class="s1">age</span><span class="s4">, </span><span class="s3">&quot;years old&quot;</span><span class="s1">)</span>
+<hr class="ls0"><span class="s0">#%% md 
+</span>
+    <span class="s1">- `name` : identifier 
+    - `=` : delimiter 
+    - `&quot;Arjun&quot;` : literal 
+    - `age` : identifier 
+    - `=` : delimiter/ operator 
+    - `eval` : identifier 
+    - `input` : identifier 
+    - `&quot;Enter age: &quot;` : literal 
+    - `print` : identifier 
+    - `&quot;is&quot;` : literal 
+    - `&quot;years old&quot;` : literal 
+ 
+</span></pre>
+</body>
+</html>
