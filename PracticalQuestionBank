@@ -1,0 +1,671 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/JaiRelan/CBSE_ComputerScience/blob/master/PracticalQuestionBank\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "collapsed": true,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "W5jvvnDM5-JK"
+      },
+      "source": [
+        "Write a program that allows an integer to be entered by the user. The program should then count the number of times the number has to be doubled before it reaches one million."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [],
+      "source": [
+        "# Q32\n",
+        "input_integer = int(input(\"Enter an integer: \"))\n",
+        "count = 0\n",
+        "while input_integer < 1000000:\n",
+        "    input_integer *= 2\n",
+        "    count += 1\n",
+        "print(count)"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "S_isgXRZ5-JM"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "To calculate the square roots of all integers between 1 and 500 and print only\n",
+        "those roots which are integers(whole numbers).\n"
+      ],
+      "metadata": {
+        "collapsed": false,
+        "id": "rS7ye1tu5-JN"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Q 35\n",
+        "for i in range(1, 501):\n",
+        "    if i ** 0.5 % 1 == 0:\n",
+        "        print(i)"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "pi1Hrt_p5-JN"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "The expression rand( )%100 always generates a number between 0 and 99. Generate 100 such numbers and print out the number of numbers in each decile (0 to 9, 10 to 19, 20 to 29 etc.)"
+      ],
+      "metadata": {
+        "collapsed": false,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "zTbO5PwR5-JO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "{'0-9': 8, '10-19': 9, '20-29': 11, '30-39': 8, '40-49': 7, '50-59': 13, '60-69': 10, '70-79': 8, '80-89': 11, '90-99': 16}\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Q 38\n",
+        "import random\n",
+        "random_numbers = {\n",
+        "    \"0-9\": 0,\n",
+        "    \"10-19\": 0,\n",
+        "    \"20-29\": 0,\n",
+        "    \"30-39\": 0,\n",
+        "    \"40-49\": 0,\n",
+        "    \"50-59\": 0,\n",
+        "    \"60-69\": 0,\n",
+        "    \"70-79\": 0,\n",
+        "    \"80-89\": 0,\n",
+        "    \"90-99\": 0\n",
+        "}\n",
+        "\n",
+        "for i in range(101):\n",
+        "    rand = int(random.randint(0, 99) / 10) * 10\n",
+        "    random_numbers[str(rand) + \"-\" + str(rand + 9)] += 1\n",
+        "\n",
+        "print(random_numbers)"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "M6FxZzky5-JO",
+        "outputId": "5a46d184-3c1e-40e8-d46e-a5bd26199e67"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Write a program to generate 1000 random numbers between 5 and 20. Prepare a\n",
+        "frequency table for the random numbers lying between (i) 6 – 10 (ii) 11 – 15 and\n",
+        "(iii) 16 – 20. also print the random numbers occurring in each interval separately."
+      ],
+      "metadata": {
+        "collapsed": false,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "szQnYcZm5-JP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Frequency table >\n",
+            "{'6-10': 237, '11-15': 276, '16-20': 276}\n",
+            "6-10: 237\n",
+            "11-15: 276\n",
+            "16-20: 276\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Q 41\n",
+        "import random\n",
+        "random_numbers = {\n",
+        "    \"6-10\": 0,\n",
+        "    \"11-15\": 0,\n",
+        "    \"16-20\": 0\n",
+        "}\n",
+        "for i in range(1, 1001):\n",
+        "    rand = random.uniform(5, 20)\n",
+        "    if rand >= 6 and rand <= 10:\n",
+        "        random_numbers['6-10'] += 1\n",
+        "    elif rand >= 11 and rand <= 15:\n",
+        "        random_numbers['11-15'] = random_numbers.get('11-15') + 1\n",
+        "    elif rand >= 16 and rand <= 20:\n",
+        "        random_numbers['16-20'] = random_numbers.get('16-20') + 1\n",
+        "\n",
+        "print(\"Frequency table >\")\n",
+        "print(\"6-10:\", random_numbers.get('6-10'))\n",
+        "print(\"11-15:\", random_numbers.get('11-15'))\n",
+        "print(\"16-20:\", random_numbers.get('16-20'))"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "fyVnDDwN5-JQ",
+        "outputId": "e63c3f68-0128-45cd-bb8c-8d78ac168cb3"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "The number 151 is a prime palindrome because it is both a prime number and a\n",
+        "palindrome. Write a program that finds all prime palindromes between two\n",
+        "numbers a and b. You may assume that a and b are between 1 and 5000."
+      ],
+      "metadata": {
+        "collapsed": false,
+        "id": "uUphKHHJ5-JQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "101\n",
+            "131\n",
+            "151\n",
+            "181\n",
+            "191\n",
+            "313\n",
+            "353\n",
+            "373\n",
+            "383\n",
+            "727\n",
+            "757\n",
+            "787\n",
+            "797\n",
+            "919\n",
+            "929\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Q 44\n",
+        "def isprime(number):\n",
+        "    if number == 1:\n",
+        "        return False\n",
+        "    for i in range(2, number):\n",
+        "        if number % i == 0:\n",
+        "            return False\n",
+        "    return True\n",
+        "\n",
+        "for number in range(int(input(\"Please input an integer 'a' > \")), int(input(\"Please inbput an integer 'b' > \"))):\n",
+        "    if isprime(number) and str(number) == str(number)[::-1]:\n",
+        "        print(number)"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "nUPvqXcX5-JR",
+        "outputId": "9dc04c03-35df-4e32-eccf-5707dcd5ca1e"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Write a program that prompts the user to enter 5 exam marks (design your\n",
+        "program such that it would be easy to change if we wanted it to work for more\n",
+        "than 5 exams). The program then displays the average mark, the highest mark,\n",
+        "and number of marks entered less than the average mark. For example, when\n",
+        "executing the program and inputting 20, 30, 10, 40, and 50 the running session\n",
+        "will look as follows:\n",
+        "\n",
+        "Enter a mark: 20\n",
+        "\n",
+        "Enter a mark: 30\n",
+        "\n",
+        "Enter a mark: 10\n",
+        "\n",
+        "Enter a mark: 40\n",
+        "\n",
+        "Enter a mark: 50\n",
+        "\n",
+        "Average mark is: 30.0\n",
+        "\n",
+        "Highest mark is: 50\n",
+        "\n",
+        "Number of marks less than the average: 2"
+      ],
+      "metadata": {
+        "collapsed": false,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "07uwmr0F5-JR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Average mark is: 25.0\n",
+            "Highest mark is: 40\n",
+            "Number of marks less than the average: 2\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Q 47\n",
+        "marks = []\n",
+        "for exam in range(1, 6): #replace 6 with the number of exams you want to input\n",
+        "    marks.append(int(input(\"Enter a mark: \")))\n",
+        "print(\"Average mark is:\", sum(marks)/len(marks))\n",
+        "print(\"Highest mark is:\", max(marks))\n",
+        "print(\"Number of marks less than the average:\", len([mark for mark in marks if mark < sum(marks)/len(marks)]))"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "kuMZPjvZ5-JS",
+        "outputId": "5f4a5ed3-b5b6-4920-c60d-82876d42427b"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Read two integers, representing a rate of pay (pence per hour) and a number of\n",
+        "hours. Print out the total pay, with hours up to 40 being paid at basic rate, from 40\n",
+        "to 60 at rate-and-a-half, above 60 at double-rate. Print the pay as pounds to two\n",
+        "decimal places.\n",
+        "\n",
+        "Terminate the loop when a zero rate is encountered. At the end of the\n",
+        "loop, print out the total pay.\n",
+        "The code for computing the pay from the rate and hours is to be written\n",
+        "as a function.\n",
+        "\n",
+        "The recommended output format is something like:\n",
+        "\n",
+        "Pay at 200 pence/hr for 38 hours is 76.00 pounds\n",
+        "\n",
+        "Pay at 220 pence/hr for 48 hours is 114.40 pounds\n",
+        "\n",
+        "Pay at 240 pence/hr for 68 hours is 206.40 pounds\n",
+        "\n",
+        "Pay at 260 pence/hr for 48 hours is 135.20 pounds\n",
+        "\n",
+        "Pay at 280 pence/hr for 68 hours is 240.80 pounds\n",
+        "\n",
+        "Pay at 300 pence/hr for 48 hours is 156.00 pounds\n",
+        "\n",
+        "Total pay is 928.80 pounds"
+      ],
+      "metadata": {
+        "collapsed": false,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "86pZvMJX5-JS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Pay at 200 pence/hr for 48 hours is 10400.0 pounds\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Q 50\n",
+        "rate, hours = int(input(\"Enter the rate: \")), int(input(\"Enter the hours: \"))\n",
+        "def pay(rate, hours):\n",
+        "    if hours <= 40:\n",
+        "        return rate * hours\n",
+        "    elif hours > 40 and hours <= 60:\n",
+        "        return rate * 40 + (rate * 1.5 * (hours - 40))\n",
+        "    elif hours > 60:\n",
+        "        return rate * 40 + (rate * 1.5 * 40) + (rate * 2 * (hours - 60))\n",
+        "print(\"Pay at\", rate, \"pence/hr for\", hours, \"hours is\", pay(rate, hours), \"pounds\")"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "eu8UxuJe5-JT",
+        "outputId": "7335514c-0115-42bf-a05d-5f72bb3d556a"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Write a program which inputs an integer number representing the age of a person\n",
+        "(using the class SimpleInput), and prints the number out followed by the word\n",
+        "\"Minor\" if the number (age) is less than 18, the word \"Pensioner\" if the number is\n",
+        "greater than 65, and the word \"Tax-payer\" otherwise."
+      ],
+      "metadata": {
+        "collapsed": false,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "Cag5OAYI5-JU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [],
+      "source": [
+        "# Q 51\n",
+        "import simpleinput\n",
+        "simpleinput.Input()"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "eZyHVUwx5-JU"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Write an algorithm to produce an n times multiplication table ( n less than or\n",
+        "equal to 10)."
+      ],
+      "metadata": {
+        "collapsed": false,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "j2LlHrbX5-JU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "1 2 3 4 \n",
+            "2 4 6 8 \n",
+            "3 6 9 12 \n",
+            "4 8 12 16 \n"
+          ]
+        }
+      ],
+      "source": [
+        "# Q 54\n",
+        "n = int(input(\"Enter a number: \"))\n",
+        "for i in range(1, n+1):\n",
+        "    for j in range(1, n+1):\n",
+        "        print(i * j, end = \" \")\n",
+        "    print()"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "zENKvVGy5-JV",
+        "outputId": "87a934cd-61b1-4620-bd9d-c377a2b0db9f"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Write a program that inputs numbers into an array and then inputs a constant. The\n",
+        "program should count the number of elements that are less than the constant,\n",
+        "equal to it and greater than it."
+      ],
+      "metadata": {
+        "collapsed": false,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "qkmIaVlg5-JV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Number of elements less than the constant: 0\n",
+            "Number of elements equal to the constant: 1\n",
+            "Number of elements greater than the constant: 3\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Q 57\n",
+        "arr = list(map(int, input(\"Enter a list of numbers: \").split()))\n",
+        "constant = int(input(\"Enter a constant: \"))\n",
+        "print(\"Number of elements less than the constant:\", len([x for x in arr if x < constant]))\n",
+        "print(\"Number of elements equal to the constant:\", len([x for x in arr if x == constant]))\n",
+        "print(\"Number of elements greater than the constant:\", len([x for x in arr if x > constant]))"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "NQQT_qVT5-JV",
+        "outputId": "d5141044-1b76-41e6-dca8-53f400ad28ef"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Write a program to input the examination marks for a class of 10 students,\n",
+        "studying 6 subjects into a 2-D array. Calculate and print the average marks\n",
+        "obtained by the class in each subject."
+      ],
+      "metadata": {
+        "collapsed": false,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "bO0WpXaK5-JW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [],
+      "source": [
+        "# Q 60\n",
+        "marks = [\n",
+        "    [int(input(\"Marks Person #1 Subject #1: \")),\n",
+        "     int(input(\"Marks Person #2 Subject #1: \")),\n",
+        "     int(input(\"Marks Person #3 Subject #1: \")),\n",
+        "     int(input(\"Marks Person #4 Subject #1: \")),\n",
+        "     int(input(\"Marks Person #5 Subject #1: \")),\n",
+        "     int(input(\"Marks Person #6 Subject #1: \")),\n",
+        "     int(input(\"Marks Person #7 Subject #1: \")),\n",
+        "     int(input(\"Marks Person #8 Subject #1: \")),\n",
+        "     int(input(\"Marks Person #9 Subject #1: \")),\n",
+        "     int(input(\"Marks Person #10 Subject #1: \"))],\n",
+        "    [int(input(\"Marks Person #1 Subject #2: \")),\n",
+        "     int(input(\"Marks Person #2 Subject #2: \")),\n",
+        "     int(input(\"Marks Person #3 Subject #2: \")),\n",
+        "     int(input(\"Marks Person #4 Subject #2: \")),\n",
+        "     int(input(\"Marks Person #5 Subject #2: \")),\n",
+        "     int(input(\"Marks Person #6 Subject #2: \")),\n",
+        "     int(input(\"Marks Person #7 Subject #2: \")),\n",
+        "     int(input(\"Marks Person #8 Subject #2: \")),\n",
+        "     int(input(\"Marks Person #9 Subject #2: \")),\n",
+        "     int(input(\"Marks Person #10 Subject #2: \"))],\n",
+        "    [int(input(\"Marks Person #1 Subject #3: \")),\n",
+        "     int(input(\"Marks Person #2 Subject #3: \")),\n",
+        "     int(input(\"Marks Person #3 Subject #3: \")),\n",
+        "     int(input(\"Marks Person #4 Subject #3: \")),\n",
+        "     int(input(\"Marks Person #5 Subject #3: \")),\n",
+        "     int(input(\"Marks Person #6 Subject #3: \")),\n",
+        "     int(input(\"Marks Person #7 Subject #3: \")),\n",
+        "     int(input(\"Marks Person #8 Subject #3: \")),\n",
+        "     int(input(\"Marks Person #9 Subject #3: \")),\n",
+        "     int(input(\"Marks Person #10 Subject #3: \"))],\n",
+        "    [int(input(\"Marks Person #1 Subject #4: \")),\n",
+        "     int(input(\"Marks Person #2 Subject #4: \")),\n",
+        "     int(input(\"Marks Person #3 Subject #4: \")),\n",
+        "     int(input(\"Marks Person #4 Subject #4: \")),\n",
+        "     int(input(\"Marks Person #5 Subject #4: \")),\n",
+        "     int(input(\"Marks Person #6 Subject #4: \")),\n",
+        "     int(input(\"Marks Person #7 Subject #4: \")),\n",
+        "     int(input(\"Marks Person #8 Subject #4: \")),\n",
+        "     int(input(\"Marks Person #9 Subject #4: \")),\n",
+        "     int(input(\"Marks Person #10 Subject #4: \"))],\n",
+        "    [int(input(\"Marks Person #1 Subject #5: \")),\n",
+        "     int(input(\"Marks Person #2 Subject #5: \")),\n",
+        "     int(input(\"Marks Person #3 Subject #5: \")),\n",
+        "     int(input(\"Marks Person #4 Subject #5: \")),\n",
+        "     int(input(\"Marks Person #5 Subject #5: \")),\n",
+        "     int(input(\"Marks Person #6 Subject #5: \")),\n",
+        "     int(input(\"Marks Person #7 Subject #5: \")),\n",
+        "     int(input(\"Marks Person #8 Subject #5: \")),\n",
+        "     int(input(\"Marks Person #9 Subject #5: \")),\n",
+        "     int(input(\"Marks Person #10 Subject #5: \"))],\n",
+        "    [int(input(\"Marks Person #1 Subject #6: \")),\n",
+        "     int(input(\"Marks Person #2 Subject #6: \")),\n",
+        "     int(input(\"Marks Person #3 Subject #6: \")),\n",
+        "     int(input(\"Marks Person #4 Subject #6: \")),\n",
+        "     int(input(\"Marks Person #5 Subject #6: \")),\n",
+        "     int(input(\"Marks Person #6 Subject #6: \")),\n",
+        "     int(input(\"Marks Person #7 Subject #6: \")),\n",
+        "     int(input(\"Marks Person #8 Subject #6: \")),\n",
+        "     int(input(\"Marks Person #9 Subject #6: \")),\n",
+        "     int(input(\"Marks Person #10 Subject #6: \"))]\n",
+        "    ]\n",
+        "\n",
+        "print(\"Average marks in subject #1:\", sum(marks[0]) / len(marks[0]))\n",
+        "print(\"Average marks in subject #2:\", sum(marks[1]) / len(marks[1]))\n",
+        "print(\"Average marks in subject #3:\", sum(marks[2]) / len(marks[2]))\n",
+        "print(\"Average marks in subject #4:\", sum(marks[3]) / len(marks[3]))\n",
+        "print(\"Average marks in subject #5:\", sum(marks[4]) / len(marks[4]))\n",
+        "print(\"Average marks in subject #6:\", sum(marks[5]) / len(marks[5]))"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "FYmVgoPU5-JW"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Write a program to input a word and check whether it is palindrome or not."
+      ],
+      "metadata": {
+        "collapsed": false,
+        "id": "02MpVBAr5-JX"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "outputs": [],
+      "source": [
+        "# Q 63\n",
+        "string = input(\"Enter a word: \")\n",
+        "print(string == string[::-1])"
+      ],
+      "metadata": {
+        "pycharm": {
+          "name": "#%%\n"
+        },
+        "id": "dlP8s4Tx5-JX"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Write a program to input a sentence and delete from it all occurrences of the word\n",
+        "“the” from it."
+      ],
+      "metadata": {
+        "collapsed": false,
+        "pycharm": {
+          "name": "#%% md\n"
+        },
+        "id": "Eeb-qczQ5-JX"
+      }
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 2
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython2",
+      "version": "2.7.6"
+    },
+    "colab": {
+      "name": "PracticalQuestionBank.ipynb",
+      "provenance": [],
+      "include_colab_link": true
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
